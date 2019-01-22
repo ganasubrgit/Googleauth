@@ -52,7 +52,7 @@ func handleCallBack(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
 		return
 	}
-	resp, err := http.Get("https://www.googleapis.com/oauth2/v2/userinfo?access_token" + token.AccessToken)
+	resp, err := http.Get("https://www.googleapis.com/oauth2/v2/userinfo?access_token=" + token.AccessToken)
 	if err != nil {
 		fmt.Printf("Could not create get request %s \n", err.Error())
 		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
